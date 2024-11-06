@@ -1,22 +1,22 @@
 #include <iostream>
-#include <cmath>
-#include <C:\codeblock\library\digits.h>
+#include <C:\codeblock\header\digits.h>
 using namespace std;
-bool cprime(int x){
+template <typename T>
+bool cprime(T x){
     if (x <= 1)
         return false;
     else
-        for (int i=2; i<=round(sqrt(x)); i++)
+        for (T i=2; i*i<=x; i++)
             if (x%i == 0)
                 return false;
     return true;
 }
-bool cdprime(int x){
+template <typename T>
+bool cdprime(T x){
     if (!cprime(x))
         return false;
-    for (int i=2; i<=round(sqrt(sumdig(x))); i++)
+    for (T i=2; i*i<=sumdig(x); i++)
         if (sumdig(x)%i == 0)
             return false;
     return true;
 }
-
