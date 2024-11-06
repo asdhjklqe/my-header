@@ -13,15 +13,15 @@ void outarr(T x[], int y, int z){
         cout << x[i] << ' ';
 }
 template <typename T>
-int maxarr(T x[], int y){
-    int maxx = x[1];
+T maxarr(T x[], int y){
+    T maxx = x[1];
     for (int i=2; i<=y; i++)
         maxx = max(maxx, x[i]);
     return maxx;
 }
 template <typename T>
-int minarr(T x[], int y){
-    int minx = x[1];
+T minarr(T x[], int y){
+    T minx = x[1];
     for (int i=2; i<=y; i++)
         minx = min(minx, x[i]);
     return minx;
@@ -77,7 +77,7 @@ T sumarr(T x[], int y, int z){
 }
 template <typename T>
 T occurence(T x[], int y, int z, T xx){
-    int s = 0;
+    T s = 0;
     for (int i=y; i<=y+z-1 ; i++)
         if (x[i] == xx)
             s+= 1;
